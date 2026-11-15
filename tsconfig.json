@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "core"
+    },
+    {
+      "path": "cli"
+    },
+    {
+      "path": "apps/server"
+    },
+    {
+      "path": "sandbox"
+    }
+  ]
+}

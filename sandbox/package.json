@@ -1,0 +1,20 @@
+{
+  "name": "@openclicky/sandbox",
+  "version": "0.1.0",
+  "description": "OpenClicky sandbox browser worker — disposable Playwright worker speaking the OpenClicky protocol",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/src/main.js",
+  "bin": { "openclicky-sandbox": "./dist/src/main.js" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/main.js"
+  },
+  "dependencies": {
+    "@openclicky/core": "0.1.0",
+    "playwright": "^1.48.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}

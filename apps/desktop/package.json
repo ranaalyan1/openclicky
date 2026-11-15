@@ -1,0 +1,39 @@
+{
+  "name": "@openclicky/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenClicky desktop overlay shell (Electron, Clicky-style floating panel)",
+  "license": "MIT",
+  "author": "Muhammad Alyan Ashraf",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --publish never"
+  },
+  "build": {
+    "appId": "com.openclicky.desktop",
+    "productName": "OpenClicky",
+    "directories": { "output": "release" },
+    "electronVersion": "33.4.11",
+    "npmRebuild": false,
+    "files": ["main.cjs", "preload.cjs", "package.json"],
+    "extraResources": [
+      { "from": "../server/dist", "to": "app/apps/server/dist" },
+      { "from": "../web", "to": "app/apps/web" },
+      { "from": "build/icon.png", "to": "icon.png" },
+      { "from": "../../core/package.json", "to": "app/node_modules/@openclicky/core/package.json" },
+      { "from": "../../core/dist", "to": "app/node_modules/@openclicky/core/dist" }
+    ],
+    "win": { "target": "nsis" },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "OpenClicky"
+    }
+  },
+  "devDependencies": {
+    "electron": "33.4.11",
+    "electron-builder": "^25.0.0"
+  }
+}
